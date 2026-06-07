@@ -145,6 +145,14 @@ async def debug():
         "all_files": files[:20]
     }
 
+@app.get("/resume")
+async def resume():
+    return FileResponse(
+        "Asadullah_Shehbaz_Resume.pdf",
+        media_type="application/pdf",
+        filename="Asadullah_Shehbaz_Resume.pdf"
+    )
+
 # ── Main entry point for Railway ────────────
 if __name__ == "__main__":
     logger.info(f"🚀 Starting server on port {PORT}")
